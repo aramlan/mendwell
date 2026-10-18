@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mendwell Repair Hub – Free community repairs in Bristol</title>
+<meta name="description" content="Bring a broken toaster, bike or jumper to Mendwell. Free volunteer-led repair sessions in Bristol. Book a demo slot in under a minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#f6f1e8;--surface:#fffdf8;--ink:#1f2a24;--muted:#56625b;--brand:#1f6f5c;--brand-ink:#fff;--accent:#d9622b;--line:#ddd3c2;--err:#b3261e;--ok:#1f6f5c;
+--serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a17;--surface:#1c2420;--ink:#f1ece2;--muted:#a9b3ac;--brand:#4fb89d;--brand-ink:#0f1a15;--accent:#f08a55;--line:#33403a;--err:#ff8a80;--ok:#4fb89d}}
+:root[data-theme="dark"]{--bg:#141a17;--surface:#1c2420;--ink:#f1ece2;--muted:#a9b3ac;--brand:#4fb89d;--brand-ink:#0f1a15;--accent:#f08a55;--line:#33403a;--err:#ff8a80;--ok:#4fb89d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--sans)}
+img,svg{max-width:100%}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,6vw,3.6rem)}h2{font-size:clamp(1.6rem,4vw,2.3rem)}h3{font-size:1.2rem}
+p{margin:0 0 1em}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+section{padding:clamp(2.5rem,7vw,5rem) 0}
+.eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--accent);margin-bottom:.75rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bg);padding:.6rem 1rem;z-index:30}
+.skip:focus{left:.5rem;top:calc(env(safe-area-inset-top,0px) + .5rem)}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:25}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.75rem 0}
+.logo{font:700 1.4rem var(--serif);color:var(--ink);text-decoration:none}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:1.25rem;list-style:none;margin:0;padding:0;align-items:center}
+nav a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{text-decoration:underline}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);border:2px solid var(--brand);padding:.8rem 1.4rem;border-radius:999px;font:600 1rem var(--sans);text-decoration:none;cursor:pointer;min-height:44px}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+nav .btn{padding:.5rem 1rem;font-size:.9rem;color:var(--brand-ink)}
+@media (max-width:640px){nav li.hide-s{display:none}}
+/* hero */
+.hero{padding-top:clamp(2rem,6vw,4.5rem)}
+.hero .grid{display:grid;gap:2.5rem;align-items:center}
+@media (min-width:860px){.hero .grid{grid-template-columns:1.2fr 1fr}}
+.hero p.lead{font-size:1.2rem;color:var(--muted);max-width:34em}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem}
+.stitch{background:var(--surface);border:2px dashed var(--accent);border-radius:20px;padding:1.75rem;position:relative}
+.stitch dl{margin:0;display:grid;gap:1rem}
+.stitch dt{font:700 2.4rem var(--serif);color:var(--brand);line-height:1}
+.stitch dd{margin:.15rem 0 0;color:var(--muted);font-size:.95rem}
+/* steps */
+.steps{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:1rem;counter-reset:s}
+@media (min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:1.4rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;margin-bottom:.75rem}
+/* filter */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.5rem 0}
+.chip{border:2px solid var(--line);background:var(--surface);color:var(--ink);padding:.5rem 1rem;border-radius:999px;font:500 .95rem var(--sans);cursor:pointer;min-height:44px}
+.chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.cards li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.1rem}
+.cards h3{margin-bottom:.25rem}
+.tag{font-size:.78rem;font-weight:600;color:var(--muted)}
+.rate{color:var(--ok);font-weight:600;font-size:.9rem}
+[hidden]{display:none!important}
+.count{color:var(--muted);font-size:.95rem}
+/* booking */
+.book{background:var(--surface);border-block:1px solid var(--line)}
+.demo{display:inline-block;background:var(--accent);color:#fff;font-size:.78rem;font-weight:700;padding:.2rem .6rem;border-radius:6px;letter-spacing:.05em;margin-bottom:1rem}
+form{display:grid;gap:1.25rem;max-width:640px}
+fieldset{border:0;padding:0;margin:0;display:grid;gap:.6rem}
+legend{font-weight:600;margin-bottom:.4rem;padding:0}
+.slot{display:flex;gap:.75rem;align-items:flex-start;border:2px solid var(--line);border-radius:12px;padding:.8rem 1rem;cursor:pointer;background:var(--bg)}
+.slot:has(input:checked){border-color:var(--brand);background:color-mix(in srgb,var(--brand) 12%,var(--bg))}
+.slot:has(input:focus-visible){outline:3px solid var(--accent);outline-offset:2px}
+.slot input{margin-top:.35rem;accent-color:var(--brand)}
+.slot small{display:block;color:var(--muted)}
+label{font-weight:600;display:block;margin-bottom:.35rem}
+input[type=text],input[type=email],select,textarea{width:100%;font:inherit;padding:.7rem .85rem;border:2px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);min-height:44px}
+input[aria-invalid="true"],select[aria-invalid="true"]{border-color:var(--err)}
+.err{color:var(--err);font-size:.9rem;margin:.3rem 0 0;min-height:0}
+.hint{color:var(--muted);font-size:.9rem;font-weight:400}
+.ok{border:2px solid var(--ok);border-radius:12px;padding:1rem 1.25rem;background:color-mix(in srgb,var(--ok) 10%,var(--bg))}
+/* faq */
+details{border-bottom:1px solid var(--line);padding:1rem 0}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:1rem;min-height:44px;align-items:center}
+summary::after{content:"+";font-size:1.5rem;color:var(--accent)}
+details[open] summary::after{content:"–"}
+details p{margin:.5rem 0 0;color:var(--muted)}
+/* footer */
+footer{background:var(--ink);color:var(--bg);padding:2.5rem 0}
+footer a{color:var(--bg)}
+footer .cols{display:grid;gap:1.5rem}
+@media (min-width:700px){footer .cols{grid-template-columns:2fr 1fr 1fr}}
+footer h2{font-size:1rem;font-family:var(--sans);margin-bottom:.5rem}
+footer ul{list-style:none;padding:0;margin:0}
+footer small{display:block;margin-top:1.5rem;opacity:.75}
+.notes{margin-top:1.5rem;font-size:.9rem}
+.notes summary{font-weight:500}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Mendwell home">Mend<span>well</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li class="hide-s"><a href="#how">How it works</a></li>
+        <li class="hide-s"><a href="#fix">What we fix</a></li>
+        <li class="hide-s"><a href="#faq">FAQ</a></li>
+        <li><a class="btn" href="#book">Book a slot</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="wrap grid">
+    <div>
+      <p class="eyebrow">Free repair sessions · Bristol</p>
+      <h1>Don't bin it. Bring it to Mendwell.</h1>
+      <p class="lead">Volunteer fixers repair your small appliances, bikes and clothes for free, while you watch, learn and have a cuppa. No appointment needed, but booking skips the queue.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a free slot</a>
+        <a class="btn ghost" href="#fix">See what we can fix</a>
+      </div>
+    </div>
+    <aside class="stitch" aria-label="Our impact so far">
+      <dl>
+        <div><dt>3,200+</dt><dd>items repaired since 2021</dd></div>
+        <div><dt>7 in 10</dt><dd>items leave working again</dd></div>
+        <div><dt>£0</dt><dd>cost. Donations welcome, never required</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2>Three steps from broken to back in use</h2>
+    <ol class="steps">
+      <li><h3>Pick a session</h3><p>Choose a Saturday morning at one of our three community venues.</p></li>
+      <li><h3>Bring your item</h3><p>Pack it with any charger or parts. Tell us what went wrong.</p></li>
+      <li><h3>Fix it together</h3><p>A volunteer works alongside you. You learn, they fix, nobody pays.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="fix" style="background:var(--surface);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <p class="eyebrow">What we fix</p>
+    <h2>Check your item before you come</h2>
+    <p>Filter by category to see our typical success rate.</p>
+    <div class="filters" role="group" aria-label="Filter by category">
+      <button class="chip" type="button" data-cat="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-cat="electrical" aria-pressed="false">Electrical</button>
+      <button class="chip" type="button" data-cat="bikes" aria-pressed="false">Bikes</button>
+      <button class="chip" type="button" data-cat="textiles" aria-pressed="false">Clothes &amp; textiles</button>
+      <button class="chip" type="button" data-cat="furniture" aria-pressed="false">Furniture</button>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <ul class="cards" id="cards"></ul>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <p class="eyebrow">Book a slot</p>
+    <h2>Reserve your repair spot</h2>
+    <p class="demo-wrap"><span class="demo">DEMO FORM</span><br>This is a demonstration. Nothing you type is sent, saved or logged.</p>
+    <form id="form" novalidate>
+      <fieldset aria-describedby="slot-err">
+        <legend>1. Choose a session</legend>
+        <label class="slot"><input type="radio" name="slot" value="sat-st-pauls"><span><strong>Sat 24 Oct, 10:00–13:00</strong><small>St Paul's Community Hall · 6 spaces left</small></span></label>
+        <label class="slot"><input type="radio" name="slot" value="sat-bedminster"><span><strong>Sat 31 Oct, 10:00–13:00</strong><small>Bedminster Library · 3 spaces left</small></span></label>
+        <label class="slot"><input type="radio" name="slot" value="sat-easton"><span><strong>Sat 7 Nov, 10:00–13:00</strong><small>Easton Makers' Space · 9 spaces left</small></span></label>
+        <p class="err" id="slot-err"></p>
+      </fieldset>
+      <div>
+        <label for="item">2. What are you bringing?</label>
+        <select id="item" name="item" aria-describedby="item-err">
+          <option value="">Select an item type</option>
+          <option>Kettle or toaster</option><option>Lamp</option><option>Radio or speaker</option><option>Bicycle</option><option>Jacket or jumper</option><option>Chair or small table</option><option>Something else</option>
+        </select>
+        <p class="err" id="item-err"></p>
+      </div>
+      <div>
+        <label for="name">3. Your first name</label>
+        <input type="text" id="name" name="name" autocomplete="off" aria-describedby="name-err">
+        <p class="err" id="name-err"></p>
+      </div>
+      <div>
+        <label for="email">Email <span class="hint">(for your demo confirmation)</span></label>
+        <input type="email" id="email" name="email" autocomplete="off" aria-describedby="email-err" placeholder="name@example.com">
+        <p class="err" id="email-err"></p>
+      </div>
+      <div><button class="btn" type="submit">Reserve my slot</button></div>
+    </form>
+    <div id="success" class="ok" role="status" tabindex="-1" hidden></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">Good to know</p>
+    <h2>Questions people ask</h2>
+    <details><summary>Do I really not have to pay?</summary><p>Repairs are free. Parts are donated or cost a few pounds at most, and we always tell you first.</p></details>
+    <details><summary>What if my item can't be fixed?</summary><p>You still leave knowing why, and we can sort usable parts for recycling. About three in ten items fall into this group.</p></details>
+    <details><summary>Can I bring something large?</summary><p>Yes, if you can carry it in. We can't repair gas appliances, TVs or anything mains-wired into a building.</p></details>
+    <details><summary>Is the venue accessible?</summary><p>All three venues are step-free with accessible toilets. Tell us in the form if you need extra support.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><strong style="font:700 1.3rem var(--serif)">Mendwell Repair Hub</strong><p>A fictional community project created for a web design exercise.</p></div>
+      <div><h2>Visit</h2><ul><li>St Paul's Community Hall</li><li>Bedminster Library</li><li>Easton Makers' Space</li></ul></div>
+      <div><h2>Contact</h2><ul><li><a href="mailto:hello@example.com">hello@example.com</a></li><li>Registered charity no. 000000 (demo)</li></ul></div>
+    </div>
+    <details class="notes"><summary>Design notes (for reviewers)</summary>
+      <p><strong>Audience:</strong> Bristol households, especially people on tight budgets and the environmentally curious. <strong>Primary action:</strong> reserve a free repair slot.</p>
+      <p><strong>Brand rules:</strong> 1) Warm paper background with deep green for actions and orange only for emphasis. 2) Fraunces for headings, Inter for body. 3) Friendly plain-English copy, short sentences, one primary button per section. 4) Dashed "stitch" borders signal mending.</p>
+      <p><strong>Interactions:</strong> category filter (aria-pressed), session selector and validated demo form, FAQ disclosure. Built with plain HTML, CSS and JS: a single page needs no framework. Fonts: Fraunces and Inter via Google Fonts (OFL). No images used.</p>
+    </details>
+    <small>© 2026 Mendwell (fictional). Demo content only.</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items=[
+    ["Toaster","electrical","Electrical",85],["Kettle","electrical","Electrical",75],["Table lamp","electrical","Electrical",90],["Hairdryer","electrical","Electrical",60],
+    ["Puncture or brakes","bikes","Bikes",95],["Gear adjustment","bikes","Bikes",90],
+    ["Zip replacement","textiles","Clothes & textiles",90],["Hem or tear","textiles","Clothes & textiles",95],["Button or lining","textiles","Clothes & textiles",95],
+    ["Wobbly chair","furniture","Furniture",80],["Drawer runners","furniture","Furniture",65]
+  ];
+  var ul=document.getElementById("cards"),count=document.getElementById("count");
+  items.forEach(function(i){
+    var li=document.createElement("li");li.dataset.cat=i[1];
+    li.innerHTML='<p class="tag"></p><h3></h3><p class="rate"></p>';
+    li.children[0].textContent=i[2];li.children[1].textContent=i[0];li.children[2].textContent=i[3]+"% usually fixed";
+    ul.appendChild(li);
+  });
+  var chips=document.querySelectorAll(".chip");
+  function apply(cat){
+    var n=0;
+    ul.querySelectorAll("li").forEach(function(li){var show=cat==="all"||li.dataset.cat===cat;li.hidden=!show;if(show)n++;});
+    count.textContent="Showing "+n+" repair type"+(n===1?"":"s")+".";
+  }
+  chips.forEach(function(c){c.addEventListener("click",function(){
+    chips.forEach(function(x){x.setAttribute("aria-pressed",x===c?"true":"false")});apply(c.dataset.cat);
+  })});
+  apply("all");
+
+  var form=document.getElementById("form"),success=document.getElementById("success");
+  function setErr(id,msg,field){
+    document.getElementById(id).textContent=msg;
+    if(field){if(msg)field.setAttribute("aria-invalid","true");else field.removeAttribute("aria-invalid");}
+  }
+  form.addEventListener("submit",function(e){
+    e.preventDefault();success.hidden=true;
+    var slot=form.querySelector('input[name="slot"]:checked'),item=form.item,name=form.name,email=form.email,first=null;
+    var bad=function(el){if(!first)first=el};
+    if(!slot){setErr("slot-err","Please choose a session.");bad(form.querySelector('input[name="slot"]'))}else setErr("slot-err","");
+    if(!item.value){setErr("item-err","Select what you are bringing.",item);bad(item)}else setErr("item-err","",item);
+    if(!name.value.trim()){setErr("name-err","Enter your first name.",name);bad(name)}else setErr("name-err","",name);
+    var ev=email.value.trim();
+    if(!ev){setErr("email-err","Enter an email address.",email);bad(email)}
+    else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ev)){setErr("email-err","Enter a valid email, like name@example.com.",email);bad(email)}
+    else setErr("email-err","",email);
+    if(first){first.focus();return}
+    var label=slot.parentElement.querySelector("strong").textContent+", "+slot.parentElement.querySelector("small").textContent.split(" · ")[0];
+    success.textContent="";
+    var h=document.createElement("strong");h.textContent="Thanks, "+name.value.trim()+". Your demo slot is held.";
+    var p=document.createElement("p");p.style.margin=".4rem 0 0";p.textContent=label+". Bring your "+item.value.toLowerCase()+". (Demo only: no booking was made and nothing was stored.)";
+    success.appendChild(h);success.appendChild(p);
+    success.hidden=false;form.reset();success.focus();
+  });
+})();
+</script>
+</body>
+</html>
